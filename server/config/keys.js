@@ -1,0 +1,10 @@
+require('dotenv').config();
+
+module.exports = {
+  google: {
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  },
+  DATABASE_URL: process.env.DATABASE_URL,
+  cookieKey: 'somespecialkeys',
+};
