@@ -1,3 +1,5 @@
+const uuid = require('uuidv4').default;
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
     'User',

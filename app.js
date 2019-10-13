@@ -8,7 +8,7 @@ const passportSetup = require('./server/config/passport-setup');
 const { db } = require('./server/models');
 const { cookieKey } = require('./server/config/keys');
 
-const users = require('./server/routes/user');
+const apiRoutes = require('./server/routes');
 
 const app = express();
 
@@ -38,14 +38,14 @@ app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 const port = process.env.PORT || 5000;
 
-app.use('/api/auth', users);
+app.use('/api', apiRoutes);
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 // });
 
 // Sync Database
-// db.sync({ force: true })
-db.sync({ force: true }).then(() => {
+// db.sync({ force: true, alter: true })
+db.sync({ alter: true }).then(() => {
   console.log('Database Synced Successfully');
   app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 });

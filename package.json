@@ -20,7 +20,8 @@
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.19.6",
-    "sequelize-auto-migrations": "^1.0.3"
+    "sequelize-auto-migrations": "^1.0.3",
+    "uuidv4": "^5.0.1"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
